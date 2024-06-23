@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kietec.Api", "Kietec.Api\Kietec.Api.csproj", "{A7E61164-A7DA-4D1F-B0DB-8DD5EE83FB66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kietec.Core", "Kietec.Core\Kietec.Core.csproj", "{9AA5AFE9-0BB9-44CF-9E39-679929EDFAD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kietec.Web", "Kietec.Web\Kietec.Web.csproj", "{0565649B-792F-4F3A-BBAF-E306087DFA8A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7E61164-A7DA-4D1F-B0DB-8DD5EE83FB66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7E61164-A7DA-4D1F-B0DB-8DD5EE83FB66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7E61164-A7DA-4D1F-B0DB-8DD5EE83FB66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7E61164-A7DA-4D1F-B0DB-8DD5EE83FB66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AA5AFE9-0BB9-44CF-9E39-679929EDFAD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AA5AFE9-0BB9-44CF-9E39-679929EDFAD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AA5AFE9-0BB9-44CF-9E39-679929EDFAD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AA5AFE9-0BB9-44CF-9E39-679929EDFAD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0565649B-792F-4F3A-BBAF-E306087DFA8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0565649B-792F-4F3A-BBAF-E306087DFA8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0565649B-792F-4F3A-BBAF-E306087DFA8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0565649B-792F-4F3A-BBAF-E306087DFA8A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
