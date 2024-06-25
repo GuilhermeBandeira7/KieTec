@@ -25,7 +25,7 @@ public static class Endpoint
 
         endpoints.MapGroup("v1/fornecedores")
             .WithTags("Fornecedores")
-            .RequireAuthorization()
+            //.RequireAuthorization()
             .MapEndpoint<CreateFornecedorEndpoint>()
             .MapEndpoint<DeleteFornecedorEndpoint>()
             .MapEndpoint<EditFornecedorEndpoint>()

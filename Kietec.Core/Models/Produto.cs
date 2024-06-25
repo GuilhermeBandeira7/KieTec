@@ -7,7 +7,7 @@ public class Produto
     public string Descricao { get; set; } = string.Empty;
     public decimal? Preco { get; set; }
     
-    public int FornecedorId { get; set; }
+    public int? FornecedorId { get; set; }
     //Essa propriedade serve para carregar as informações do fornecedor
     public Fornecedor? Fornecedor { get; set; }
     

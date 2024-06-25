@@ -24,12 +24,6 @@ public class FornecedorMapping : IEntityTypeConfiguration<Fornecedor>
 
         builder
             .HasIndex(x => x.Nome)
-            .IsUnique();
-        
-        //Estabelecendo a relação N pra 1 entre produto e fornecedor
-        builder
-            .HasMany(x => x.Produtos)
-            .WithOne(x => x.Fornecedor);
-
+            .IsUnique();       
     }
 }

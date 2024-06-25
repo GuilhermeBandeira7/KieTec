@@ -3,6 +3,7 @@ using Kietec.Api.Handlers;
 using Kietec.Core;
 using Kietec.Core.Handlers;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 namespace Kietec.Api.Common.Api;
 
@@ -18,10 +19,7 @@ public static class BuildExtension
     public static void AddDocumentation(this WebApplicationBuilder builder)
     {
         builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen(x =>
-        {
-            x.CustomSchemaIds(n => n.FullName);
-        });
+        builder.Services.AddSwaggerGen();
     }
     
     public static void AddDataContexts(this WebApplicationBuilder builder)
@@ -53,6 +51,9 @@ public static class BuildExtension
     
     public static void AddServices(this WebApplicationBuilder builder)
     {
+        builder.Services
+            .Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(options => 
+            options.SerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
         builder
             .Services
             .AddTransient<IProdutoHandler, ProdutoHandler>();

@@ -33,10 +33,5 @@ public class ProdutoMapping : IEntityTypeConfiguration<Produto>
         builder
             .HasIndex(x => x.Nome)
             .IsUnique();
-        
-        //Estabelecendo a relação 1 pra N entre fornecedor e produto
-        builder
-            .HasOne(x => x.Fornecedor)
-            .WithMany(x => x.Produtos);
     }
 }

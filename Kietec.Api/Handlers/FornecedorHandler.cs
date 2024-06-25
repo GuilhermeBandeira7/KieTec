@@ -86,6 +86,7 @@ public class FornecedorHandler(AppDbContext context) : IFornecedorHandler
                 .Fornecedors
                 .AsNoTracking()
                 .Where(x => x.UserId == request.UserId)
+                .Include(x => x.Produtos)
                 .OrderBy(x => x.Nome);
             
             var fornecedores = await query

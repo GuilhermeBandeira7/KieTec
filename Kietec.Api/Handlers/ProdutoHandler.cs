@@ -21,7 +21,7 @@ public class ProdutoHandler(AppDbContext context) : IProdutoHandler
             
             var fornecedor = await context
                 .Fornecedors
-                .FirstOrDefaultAsync(x => x.Id == request.Id && x.UserId == request.UserId);
+                .FirstOrDefaultAsync(x => x.Id == request.FornecedorId && x.UserId == request.UserId);
             
             if(produto is null || fornecedor is null)
                 return new Response<Produto?>(null, 404, "Produto ou fornecedor não encontrado.");
@@ -85,7 +85,7 @@ public class ProdutoHandler(AppDbContext context) : IProdutoHandler
         }
     }
 
-    public async Task<Response<string?>> DetailsAsync(DetailsProdutoRequest request)
+    public async Task<Response<Produto?>> DetailsAsync(DetailsProdutoRequest request)
     {
         try
         {
@@ -94,13 +94,13 @@ public class ProdutoHandler(AppDbContext context) : IProdutoHandler
                 .FirstOrDefaultAsync(x => x.Id == request.Id && x.UserId == request.UserId);
 
             if (produto is null)
-                return new Response<string?>(null, 404, "Produto não encontrado.");
+                return new Response<Produto?>(null, 404, "Produto não encontrado.");
 
-            return new Response<string?>(produto.Descricao);
+            return new Response<Produto?>(produto);
         }
         catch 
         {
-            return new Response<string?>(null, 500, "Não foi possível trazer os detalhes do produto");
+            return new Response<Produto?>(null, 500, "Não foi possível trazer os detalhes do produto");
         }
     }
 
@@ -111,6 +111,7 @@ public class ProdutoHandler(AppDbContext context) : IProdutoHandler
             var produto = await context
                 .Produtos
                 .FirstOrDefaultAsync(x => x.Id == request.Id && x.UserId == request.UserId);
+
 
             if (produto is null)
                 return new Response<Produto?>(null, 404, "Produto não encontrado.");
@@ -138,6 +139,7 @@ public class ProdutoHandler(AppDbContext context) : IProdutoHandler
                 .Produtos
                 .AsNoTracking()
                 .Where(x => x.UserId == request.UserId)
+                .Include(x => x.Fornecedor)
                 .OrderBy(x => x.Nome);
             
             var produtos = await query

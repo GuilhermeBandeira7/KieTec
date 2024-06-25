@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Kietec.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240624011908_v1")]
+    [Migration("20240625125243_v1")]
     partial class v1
     {
         /// <inheritdoc />
@@ -60,7 +60,7 @@ namespace Kietec.Api.Migrations
                         .HasMaxLength(120)
                         .HasColumnType("NVARCHAR");
 
-                    b.Property<int>("FornecedorId")
+                    b.Property<int?>("FornecedorId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Nome")
@@ -90,9 +90,7 @@ namespace Kietec.Api.Migrations
                 {
                     b.HasOne("Kietec.Core.Models.Fornecedor", "Fornecedor")
                         .WithMany("Produtos")
-                        .HasForeignKey("FornecedorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("FornecedorId");
 
                     b.Navigation("Fornecedor");
                 });

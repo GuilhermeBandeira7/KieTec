@@ -1,11 +1,6 @@
 using Kietec.Api;
 using Kietec.Api.Common.Api;
-using Kietec.Api.Data;
 using Kietec.Api.Endpoint;
-using Kietec.Api.Handlers;
-using Kietec.Core.Handlers;
-using Microsoft.Data.Sqlite;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 //Extension methods abaixo foram criados para resolver todas as dependências

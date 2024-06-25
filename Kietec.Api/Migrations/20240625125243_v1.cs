@@ -35,7 +35,7 @@ namespace Kietec.Api.Migrations
                     Nome = table.Column<string>(type: "NVARCHAR", maxLength: 80, nullable: false),
                     Descricao = table.Column<string>(type: "NVARCHAR", maxLength: 120, nullable: false),
                     Preco = table.Column<decimal>(type: "MONEY", nullable: false),
-                    FornecedorId = table.Column<int>(type: "INTEGER", nullable: false),
+                    FornecedorId = table.Column<int>(type: "INTEGER", nullable: true),
                     DataCriacao = table.Column<DateTime>(type: "TEXT", nullable: false),
                     UserId = table.Column<string>(type: "TEXT", nullable: false)
                 },
@@ -46,8 +46,7 @@ namespace Kietec.Api.Migrations
                         name: "FK_Produto_Fornecedor_FornecedorId",
                         column: x => x.FornecedorId,
                         principalTable: "Fornecedor",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(

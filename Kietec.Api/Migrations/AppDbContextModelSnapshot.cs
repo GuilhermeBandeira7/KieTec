@@ -57,7 +57,7 @@ namespace Kietec.Api.Migrations
                         .HasMaxLength(120)
                         .HasColumnType("NVARCHAR");
 
-                    b.Property<int>("FornecedorId")
+                    b.Property<int?>("FornecedorId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Nome")
@@ -87,9 +87,7 @@ namespace Kietec.Api.Migrations
                 {
                     b.HasOne("Kietec.Core.Models.Fornecedor", "Fornecedor")
                         .WithMany("Produtos")
-                        .HasForeignKey("FornecedorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("FornecedorId");
 
                     b.Navigation("Fornecedor");
                 });
