@@ -9,7 +9,7 @@ public class Produto
     
     public int FornecedorId { get; set; }
     //Essa propriedade serve para carregar as informações do fornecedor
-    public Fornecedor Fornecedor { get; set; } = null!;
+    public Fornecedor? Fornecedor { get; set; }
     
     public DateTime DataCriacao { get; set; } = DateTime.Now;
     //A prop UserId faz referência ao usuário que for manipular um produto

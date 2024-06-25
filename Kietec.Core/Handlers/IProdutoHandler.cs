@@ -10,7 +10,7 @@ public interface IProdutoHandler
     Task<Response<Produto?>> AddSuppierAsync(AddSupplierRequest request);
     Task<Response<Produto?>> CreateAsync(CreateProdutoRequest request);
     Task<Response<Produto?>> DeleteAsync(DeleteProdutoRequest request);
-    Task<Response<Produto?>> DetailsAsync(DetailsProdutoRequest request);
+    Task<Response<string?>> DetailsAsync(DetailsProdutoRequest request);
     Task<Response<Produto?>> EditAsync(EditProdutoRequest request);
-    Task<PagedResponse<List<Produto?>>> IndexAsync(IndexProdutoRequest request);
+    Task<PagedResponse<List<Produto>?>> IndexAsync(IndexProdutoRequest request);
 }

@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 namespace Kietec.Core.Responses;
 
 //Classe genérica base para uma resposta
-public abstract class Response<TData>
+public class Response<TData>
 {
     private int _code = Configuration.DefaultStatusCode;
     

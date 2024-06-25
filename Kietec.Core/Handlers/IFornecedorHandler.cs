@@ -11,5 +11,5 @@ public interface IFornecedorHandler
     Task<Response<Fornecedor?>> CreateAsync(CreateFornecedorRequest request);
     Task<Response<Fornecedor?>> DeleteAsync(DeleteFornecedorRequest request);
     Task<Response<Fornecedor?>> EditAsync(EditFornecedorRequest request);
-    Task<PagedResponse<List<Fornecedor?>>> ReadAsync(ReadFornecedorRequest request);
+    Task<PagedResponse<List<Fornecedor>?>> ReadAsync(ReadFornecedorRequest request);
 }
