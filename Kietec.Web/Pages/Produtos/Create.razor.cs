@@ -5,7 +5,7 @@ using MudBlazor;
 
 namespace Kietec.Web.Pages.Produtos
 {
-    public partial class CreateCategoryPage : ComponentBase
+    public partial class CreateProdutoPage : ComponentBase
     {
         public bool IsBusy { get; set; } = false;
         public CreateProdutoRequest InputModel { get; set; } = new();

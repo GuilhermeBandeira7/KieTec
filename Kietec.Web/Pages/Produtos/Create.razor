@@ -1,6 +1,39 @@
 ﻿@page "/produtos/adicionar"
-@inherits CreateCategoryPage
+@inherits CreateProdutoPage
 
-@code {
+<MudText Typo="Typo.h3">Novo Produto</MudText>
 
-}
+<MudPaper Class="pa-8 mt-4">
+    <EditForm Model="@InputModel" OnValidSubmit="OnValidSubmitAsync">
+        <DataAnnotationsValidator />
+
+        <MudTextField Label="Nome"
+                      HelperText="Campo obrigatório"
+                      @bind-Value="InputModel.Nome"
+                      For="@(() => InputModel.Nome)" />
+
+        <MudTextField Label="Descrição"
+                      Lines="5"
+                      HelperText="Campo obrigatório"
+                      @bind-Value="InputModel.Descricao"
+                      For="@(() => InputModel.Descricao)" />
+
+        <MudTextField Label="Preço"
+                      HelperText="Campo obrigatório"
+                      @bind-Value="InputModel.Preco"
+                      For="@(() => InputModel.Preco)" />
+
+        @if (IsBusy)
+        {
+            <MudProgressCircular Indeterminate="true" Color="Color.Primary" />
+        }
+        else
+        {
+            <MudButton ButtonType="ButtonType.Submit"
+                       Variant="Variant.Filled"
+                       Color="Color.Primary">
+                Salvar
+            </MudButton>
+        }
+    </EditForm>
+</MudPaper>
