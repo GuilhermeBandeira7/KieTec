@@ -31,4 +31,4 @@ A Api está documentada no Swagger, que pode ser acessada colocando /swagger no 
 Por meio de handlers implementados no core, a API mapeia e implementa seus endpoints e define como vai lidar com cada requisição, além de estabelecer as relações e gerenciar o banco de dados com EntityFramework. 
 
 <br>
-Já o é frontend feito em blazor wasm e componentes do MudBlazor, implementa os handlers do Core com um HttpClient que faz todas as requisições para a API, que retorna por sua vez as respostas padronizadas.
+Já o frontend é feito com blazor wasm e componentes do MudBlazor, implementa os handlers do Core com um HttpClient que faz todas as requisições para a API, que retorna por sua vez as respostas padronizadas.
