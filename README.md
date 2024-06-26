@@ -21,7 +21,6 @@ Os padrões configurados na solução são: <br>
 Backend app (BackendUrl): https://localhost:7076 (fallback: http://localhost:5217)
 Frontend app (FrontendUrl): https://localhost:7007 (fallback: http://localhost:5278) 
 <br>
-Você pode usar ou atualizar URLs no appsettings.json na pasta Kietec.Api para cada proejto coom novas BackendUrl e FrontendUrl endpoints
 
 ## 📚 Documentação e arquitetura
 
