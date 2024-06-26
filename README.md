@@ -14,7 +14,7 @@ Após baixar o projeto ou clonar o repositório, basta acessar a Pasta Kietec.Ap
 da API será mostrada no terminal.
 Repetir o mesmo processo com a pasta Kietec.Web, que irá subir o frontend. Feito isso, é só acessar a URL do front-end que será mostrada no terminal também.
 
-As configurações das URLs usadas para rodar a solução estão presentes no arquivo apssetings.json na pasta Kietec.Api
+As configurações das URLs usadas para rodar a solução estão presentes no arquivo appsettings.json na pasta Kietec.Api
 Backend app (BackendUrl): https://localhost:7076 (fallback: https://localhost:5217)
 Frontend app (FrontendUrl): https://localhost:7007 (fallback: https://localhost:5278)
 Você pode usar ou atualizar URLs no appsettings.json na pasta Kietec.Api para cada proejto coom novas BackendUrl e FrontendUrl endpoints
