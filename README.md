@@ -10,13 +10,14 @@ O App lista produtos e fornecedores, nome, descrição e valor. Também, é poss
 ## 🛠️ Abrir e rodar o projeto
 
 Para rodar o projeto é necessário a versão 8 do .NET SDK ou posterior, encontrada em <href> https://dotnet.microsoft.com/en-us/download/dotnet/8.0 </href>
-Após baixar o projeto ou clonar o repositório, basta acessar a Pasta Kietec.Api pelo terminal e executar o comando 'dotnet run' para rodar a api.
-Repetir o mesmo processo com a pasta Kietec.Web, que irá subir o frontend.
-Feito isso, é só acessar a URL do front-end, que é http://localhost:5278
+Após baixar o projeto ou clonar o repositório, basta acessar a Pasta Kietec.Api pelo terminal e executar o comando 'dotnet run' para rodar a api, a URL
+da API será mostrada no terminal.
+Repetir o mesmo processo com a pasta Kietec.Web, que irá subir o frontend. Feito isso, é só acessar a URL do front-end que será mostrada no terminal também.
 
-## 📚 Mais informações
+## 📚 Documentação e arquitetura
 
-A Api está toda documentada no Swagger, disponível em http://localhost:5217/swagger ao rodar a API
+Ao rodar a API, o usuário é direcionado a um localhost que terá a mensagem "OK" de health check.
+A Api está toda documentada no Swagger, que pode ser acessada ao rodar a API e colocar /swagger no final da URL do localhost.
 
 Um pouco sobre a arquitetura do projeto, escolhi criar uma class library chamada Kietec.Core que define os padrões e comportamentos de requests e responses.
 Por meio de handlers implementados no core, a API mapeia e implementa seus endpoints e define como vai lidar com cada requisição, além de estabelecer as relações e gerenciar o banco de dados com EntityFramework.
