@@ -16,7 +16,7 @@ Feito isso, é só acessar a URL do front-end, que é http://localhost:5278
 
 ## 📚 Mais informações
 
-A Api está toda documentada no Swagger, disponível em http://localhost:5278/swagger/index.html ao rodar a API
+A Api está toda documentada no Swagger, disponível em http://localhost:5217/swagger ao rodar a API
 
 Um pouco sobre a arquitetura do projeto, escolhi criar uma class library chamada Kietec.Core que define os padrões e comportamentos de requests e responses.
 Por meio de handlers implementados no core, a API mapeia e implementa seus endpoints e define como vai lidar com cada requisição, além de estabelecer as relações e gerenciar o banco de dados com EntityFramework.
