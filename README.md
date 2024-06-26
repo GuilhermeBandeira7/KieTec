@@ -16,7 +16,7 @@ Repetir o mesmo processo com a pasta Kietec.Web, que irá subir o frontend. Feit
 
 ## 📚 Documentação e arquitetura
 
-Ao rodar a API, o usuário é direcionado a um localhost que terá a mensagem "OK" de health check.
+Ao rodar a API, o usuário terá acesso a URL localhost que ao acessar será direcionado ao browser com a mensagem "OK" de health check.
 A Api está toda documentada no Swagger, que pode ser acessada ao rodar a API e colocar /swagger no final da URL do localhost.
 
 Um pouco sobre a arquitetura do projeto, escolhi criar uma class library chamada Kietec.Core que define os padrões e comportamentos de requests e responses.
