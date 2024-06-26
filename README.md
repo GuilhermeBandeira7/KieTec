@@ -21,4 +21,4 @@ A Api está toda documentada no Swagger, que pode ser acessada ao rodar a API e 
 
 Um pouco sobre a arquitetura do projeto, escolhi criar uma class library chamada Kietec.Core que define os padrões e comportamentos de requests e responses.
 Por meio de handlers implementados no core, a API mapeia e implementa seus endpoints e define como vai lidar com cada requisição, além de estabelecer as relações e gerenciar o banco de dados com EntityFramework.
-Já o frontend feito em blazor wasm, implementa estes handlers com um HttpClient que faz todas as requisições para a API, que retorna por sua vez as respostas padronizadas.
+Já o frontend feito em blazor wasm e componentes do MudBlazor, implementa estes handlers com um HttpClient que faz todas as requisições para a API, que retorna por sua vez as respostas padronizadas.
