@@ -5,13 +5,14 @@ using Microsoft.AspNetCore.Components;
 using MudBlazor;
 
 namespace Kietec.Web.Pages.Produtos;
-
 public partial class GetAllProdutosPage : ComponentBase
 {
     #region Properties
 
     public bool IsBusy { get; set; } = false;
     public List<Produto> Produtos { get; set; } = [];
+
+    public Produto? Produto = new();
 
     #endregion
 
@@ -77,6 +78,30 @@ public partial class GetAllProdutosPage : ComponentBase
             await Handler.DeleteAsync(request);
             Produtos.RemoveAll(x => x.Id == id);
             Snackbar.Add($"Produto {nome} removido", Severity.Info);
+        }
+        catch (Exception ex)
+        {
+            Snackbar.Add(ex.Message, Severity.Error);
+        }
+    }
+
+    public async void OnEditAsync(int id, Produto produto)
+    {
+        try
+        {
+            var request = new EditProdutoRequest()
+            {
+                Id = id,
+                Nome = produto.Nome,
+                Descricao = produto.Descricao,
+                Preco = produto.Preco
+            };
+            var response = await Handler.EditAsync(request);
+            if (response.IsSuccess)
+                Snackbar.Add($"Produto {produto.Nome} alterado", Severity.Info);
+            else
+                Snackbar.Add($"Falha ao alterar o produto", Severity.Error);
+
         }
         catch (Exception ex)
         {

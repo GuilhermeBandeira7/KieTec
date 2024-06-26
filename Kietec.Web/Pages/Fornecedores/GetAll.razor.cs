@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Components;
 using MudBlazor;
 
 namespace Kietec.Web.Pages.Fornecedores;
-
 public partial class GetAllFornecedoresPage : ComponentBase
 {
     #region Properties
@@ -78,6 +77,29 @@ public partial class GetAllFornecedoresPage : ComponentBase
             await Handler.DeleteAsync(request);
             Fornecedores.RemoveAll(x => x.Id == id);
             Snackbar.Add($"Fornecedor {nome} removido", Severity.Info);
+        }
+        catch (Exception ex)
+        {
+            Snackbar.Add(ex.Message, Severity.Error);
+        }
+    }
+
+    public async void OnEditAsync(int id, Fornecedor fornecedor)
+    {
+        try
+        {
+            var request = new EditFornecedorRequest()
+            {
+                Id = id,
+                Nome = fornecedor.Nome,
+                Telefone = fornecedor.Telefone
+            };
+            var response = await Handler.EditAsync(request);
+            if (response.IsSuccess)
+                Snackbar.Add($"Fornedor {fornecedor.Nome} alterado", Severity.Info);
+            else
+                Snackbar.Add($"Falha ao alterar o fornecedor", Severity.Error);
+
         }
         catch (Exception ex)
         {

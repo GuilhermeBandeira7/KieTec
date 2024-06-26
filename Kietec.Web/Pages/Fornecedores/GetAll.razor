@@ -17,7 +17,9 @@
 
 <MudDataGrid Class="mt-4"
              Items="@Fornecedores"
-             ReadOnly="false" EditMode="@DataGridEditMode.Form">
+             ReadOnly="false" EditMode="@DataGridEditMode.Form"
+             CommittedItemChanges="CommittedItemChanges"
+             T="Fornecedor">
     <Columns>
         <HierarchyColumn T="Fornecedor" ButtonDisabledFunc="@(x => x.Produtos?.Count < 1)" />
         <PropertyColumn Property="x => x.Id" Title="Id"/>
@@ -50,4 +52,11 @@
         </MudCard>
     </ChildRowContent>
 </MudDataGrid>
+
+@code {
+    void CommittedItemChanges(Fornecedor fornecedor)
+    {
+        OnEditAsync(fornecedor.Id, fornecedor);
+    }
+}
 

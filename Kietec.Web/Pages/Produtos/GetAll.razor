@@ -1,8 +1,8 @@
 @page "/produtos"
+@using Kietec.Core.Models
 @inherits GetAllProdutosPage
 
 <MudText Typo="Typo.h3">Produtos</MudText>
-
 <div class="d-flex justify-end">
     <MudButton Class="mr-2"
         Variant="Variant.Filled"
@@ -25,7 +25,9 @@
              Items="@Produtos"
              Filterable="true"
              ReadOnly="false" 
-             EditMode="@DataGridEditMode.Form">
+             EditMode="@DataGridEditMode.Form"
+             CommittedItemChanges="CommittedItemChanges"
+              T="Produto">
     <Columns>
         <PropertyColumn Property="x => x.Id" Title="Id"/>
         <PropertyColumn Property="x => x.Nome" Title="Nome"/>
@@ -42,3 +44,12 @@
         </TemplateColumn>
     </Columns>
 </MudDataGrid>
+
+@code {
+
+    void CommittedItemChanges(Produto produto)
+    {
+        OnEditAsync(produto.Id, produto);
+    }
+
+}
