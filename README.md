@@ -10,7 +10,7 @@ O App lista produtos e fornecedores, nome, descrição e valor. Também, é poss
 ## 🛠️ Abrir e rodar o projeto
 
 Para rodar o projeto é necessário a versão 8 do .NET SDK ou posterior, encontrada em <href> https://dotnet.microsoft.com/en-us/download/dotnet/8.0 </href>
-Após baixar o projeto ou clonar o repositório, basta acessar a Pasta Kietec.Api pelo terminal e executar o comando 'dotnet' run para rodar a api.
+Após baixar o projeto ou clonar o repositório, basta acessar a Pasta Kietec.Api pelo terminal e executar o comando 'dotnet run' para rodar a api.
 Repetir o mesmo processo com a pasta Kietec.Web, que irá subir o frontend.
 Feito isso, é só acessar a URL do front-end, que é http://localhost:5278
 
