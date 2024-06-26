@@ -1,0 +1,33 @@
+@page "/produtos/AddFornecedor"
+@inherits AddFornecedorPage
+
+<MudText Typo="Typo.h3">Adicionar fornecedor ao produto</MudText>
+
+<MudPaper Class="pa-8 mt-4">
+    <EditForm Model="@AddSupplierModel" OnValidSubmit="OnValidAddSupplierSubmitAsync">
+        <DataAnnotationsValidator />
+
+        <MudTextField Label="Id Produto"
+                      HelperText="Campo obrigatório"
+                      @bind-Value= "AddSupplierModel.Id"
+                      For="@(() => AddSupplierModel.Id)" />
+
+        <MudTextField Label="Id Fornecedor"
+                      HelperText="Campo obrigatório"
+                      @bind-Value="AddSupplierModel.FornecedorId"
+                      For="@(() => AddSupplierModel.FornecedorId)" />
+
+        @if (IsBusy)
+        {
+            <MudProgressCircular Indeterminate="true" Color="Color.Primary" />
+        }
+        else
+        {
+            <MudButton ButtonType="ButtonType.Submit"
+                       Variant="Variant.Filled"
+                       Color="Color.Primary">
+                Salvar
+            </MudButton>
+        }
+    </EditForm>
+</MudPaper>

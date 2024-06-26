@@ -1,0 +1,44 @@
+@page "/produtos"
+@inherits GetAllProdutosPage
+
+<MudText Typo="Typo.h3">Produtos</MudText>
+
+<div class="d-flex justify-end">
+    <MudButton Class="mr-2"
+        Variant="Variant.Filled"
+        Color="Color.Primary"
+        StartIcon="@Icons.TwoTone.Add"
+        Href="/produtos/adicionar">
+        NOVO PRODUTO
+    </MudButton>
+
+    <MudButton
+        Variant="Variant.Filled"
+        Color="Color.Primary"
+        StartIcon="@Icons.TwoTone.Add"
+        Href="/produtos/addFornecedor">
+        ADD FORNECEDOR
+    </MudButton>
+</div>
+
+<MudDataGrid Class="mt-4"
+             Items="@Produtos"
+             Filterable="true"
+             ReadOnly="false" 
+             EditMode="@DataGridEditMode.Form">
+    <Columns>
+        <PropertyColumn Property="x => x.Id" Title="Id"/>
+        <PropertyColumn Property="x => x.Nome" Title="Nome"/>
+        <PropertyColumn Property="x => x.Descricao" Title="Descrição"/>
+        <PropertyColumn Property="x => x.Preco" Title="Preço" Format="C"/>
+        <TemplateColumn Class="d-flex justify-end">
+            <CellTemplate>
+                <MudIconButton
+                    Icon="@Icons.Material.Filled.Delete"
+                    Color="Color.Error"
+                    OnClick="() => OnDeleteButtonClickedAsync(context.Item.Id, context.Item.Nome)"/>
+                <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit" OnClick="@context.Actions.StartEditingItemAsync"/>
+            </CellTemplate>
+        </TemplateColumn>
+    </Columns>
+</MudDataGrid>

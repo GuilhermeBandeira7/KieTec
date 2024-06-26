@@ -1,7 +1,7 @@
-﻿@page "/produtos/adicionar"
-@inherits CreateProdutoPage
+@page "/fornecedores/adicionar"
+@inherits CreateFornecedorPage
 
-<MudText Typo="Typo.h3">Novo Produto</MudText>
+<MudText Typo="Typo.h3">Novo Fornecedor</MudText>
 
 <MudPaper Class="pa-8 mt-4">
     <EditForm Model="@InputModel" OnValidSubmit="OnValidSubmitAsync">
@@ -12,15 +12,10 @@
                       @bind-Value="InputModel.Nome"
                       For="@(() => InputModel.Nome)" />
 
-        <MudTextField Label="Descrição"
+        <MudTextField Label="Telefone"
                       HelperText="Campo obrigatório"
-                      @bind-Value="InputModel.Descricao"
-                      For="@(() => InputModel.Descricao)" />
-
-        <MudTextField Label="Preço"
-                      HelperText="Campo obrigatório"
-                      @bind-Value="InputModel.Preco"
-                      For="@(() => InputModel.Preco)" />
+                      @bind-Value="InputModel.Telefone"
+                      For="@(() => InputModel.Telefone)" />
 
         @if (IsBusy)
         {

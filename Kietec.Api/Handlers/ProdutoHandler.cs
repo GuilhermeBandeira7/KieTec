@@ -91,7 +91,9 @@ public class ProdutoHandler(AppDbContext context) : IProdutoHandler
         {
             var produto = await context
                 .Produtos
-                .FirstOrDefaultAsync(x => x.Id == request.Id && x.UserId == request.UserId);
+                .Where(x => x.Id == request.Id && x.UserId == request.UserId)
+                .Include(x => x.Fornecedor)
+                .FirstOrDefaultAsync();
 
             if (produto is null)
                 return new Response<Produto?>(null, 404, "Produto não encontrado.");
