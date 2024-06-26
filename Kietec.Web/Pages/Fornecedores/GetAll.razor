@@ -22,7 +22,7 @@
              T="Fornecedor">
     <Columns>
         <HierarchyColumn T="Fornecedor" ButtonDisabledFunc="@(x => x.Produtos?.Count < 1)" />
-        <PropertyColumn Property="x => x.Id" Title="Id"/>
+        <PropertyColumn Property="x => x.Id" Title="Id" IsEditable="false" />
         <PropertyColumn Property="x => x.Nome" Title="Nome"/>
         <PropertyColumn Property="x => x.Telefone" Title="Telefone"/>
         <TemplateColumn Class="d-flex justify-end">
