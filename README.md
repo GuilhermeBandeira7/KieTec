@@ -24,7 +24,7 @@ Frontend app (FrontendUrl): https://localhost:7007 (fallback: http://localhost:5
 
 ## 📚 Documentação e arquitetura
 
- Ao subir a API e acessar o URL, o usuário será direcionado ao browser com a mensagem "OK" de health-check.
+ Ao subir a API e acessar a URL, o usuário será direcionado ao browser com a mensagem "OK" de health-check.
 A Api está documentada no Swagger, que pode ser acessada colocando /swagger no final da URL do localhost. <br>
 
  Um pouco sobre a arquitetura do projeto, escolhi criar uma class library chamada Kietec.Core que define os padrões e comportamentos de requests e responses.
