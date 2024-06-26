@@ -15,7 +15,9 @@ da API será mostrada no terminal. Repetir o mesmo processo com a pasta Kietec.W
 que será mostrada no terminal também. O terminal irá mostrar as URLs corretas de cada projeto.
 
  As configurações das URLs usadas para rodar a solução estão presentes no arquivo appsettings.json na pasta Kietec.Api
-De preferência checar as URLs do terminal. Os padrões configurados na solução são: <br>
+De preferência checar as URLs do terminal. 
+
+Os padrões configurados na solução são: <br>
 Backend app (BackendUrl): https://localhost:7076 (fallback: http://localhost:5217)
 Frontend app (FrontendUrl): https://localhost:7007 (fallback: http://localhost:5278) 
 <br>
