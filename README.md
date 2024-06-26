@@ -1,6 +1,8 @@
 <h1 align="center"> KieTec Solution </h1>
 
-App web feito em .NET 8 com Blazor wasm e minimal API com solução ao desafio proposto pela KieTec
+## 🎯 Sobre o projeto
+App web feito em .NET 8 com Blazor wasm e minimal API
+
 ## 🔨 Funcionalidades do projeto
 
 O App lista produtos e fornecedores, nome, descrição e valor. Também, é possível cadastrar produtos e fornecedores. Os dados são todos salvos no SQLite
